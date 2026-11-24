@@ -1,6 +1,6 @@
 {
   "name": "editor-de-videos",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Edita vídeos falados: corta pausas, erros e repetições palavra por palavra, escolhe a melhor tomada, monta um vídeo por hook e coloca takes de apoio com a voz de fundo.",
   "author": {
     "name": "Atacado Exponencial"
