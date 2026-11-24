@@ -10,12 +10,14 @@ Tudo roda no seu computador. O vídeo não sobe para nenhum site, e a transcriç
 - **Google Drive para computador** (grátis): é o que faz a pasta do Drive aparecer no computador. Baixe em google.com/drive/download.
 
 ## Instalação no Claude (uma vez, uns 10 minutos)
-1. Baixe e instale o app do Claude em claude.ai/download e entre na sua conta.
-2. Abra a aba **Code**, escolha qualquer pasta do computador (pode ser a Área de Trabalho) e cole esta linha no chat:
-   ```
-   /plugin install editor-de-videos --marketplace atacadoexponencial-maker/edicao-videos-mentorados
-   ```
-3. Feche e abra a conversa de novo e escreva: **"Instala o editor de vídeos."** A IA instala o que falta e cria a pasta **Edição de Vídeos IA** no seu Google Drive. Se ela pedir permissão para rodar comandos, clique em permitir.
+1. Entre em **claude.ai/customize/plugins** com a sua conta.
+2. Clique para **adicionar uma loja (marketplace)** e cole: `atacadoexponencial-maker/edicao-videos-mentorados`. Depois ative o plugin **editor-de-videos**.
+   Assim ele se atualiza sozinho sempre que sair uma versão nova.
+3. Baixe e instale o app do Claude em claude.ai/download, entre na mesma conta e abra a aba **Code**. Escolha qualquer pasta do computador (pode ser a Área de Trabalho).
+4. Escreva: **"Instala o editor de vídeos."** A IA instala o que falta e cria a pasta **Edição de Vídeos IA** no seu Google Drive. Se ela pedir permissão para rodar comandos, clique em permitir.
+
+Alternativa pelo próprio app (sem atualização automática): na aba Code, cole
+`/plugin install editor-de-videos --marketplace atacadoexponencial-maker/edicao-videos-mentorados`.
 
 ## Instalação no Codex (uma vez, uns 10 minutos)
 1. Instale o app do Codex (chatgpt.com/codex) e entre com a sua conta do ChatGPT.
