@@ -1,0 +1,6 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "editor-de-videos",
+  "version": "1.0.0",
+  "description": "Edita vídeos falados: corta pausas, erros e repetições palavra por palavra, escolhe a melhor tomada, monta um vídeo por hook e coloca takes de apoio com a voz de fundo."
+}

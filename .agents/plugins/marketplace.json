@@ -1,0 +1,17 @@
+{
+  "name": "edicao-videos-mentorados",
+  "plugins": [
+    {
+      "name": "editor-de-videos",
+      "source": {
+        "source": "local",
+        "path": "./plugins/editor-de-videos"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

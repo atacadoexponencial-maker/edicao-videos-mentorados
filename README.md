@@ -1,28 +1,53 @@
-# Edição de vídeos para mentorados (teste)
+# Editor de vídeos com IA (mentorados)
 
-Repositório de teste. Serve para descobrir se a edição roda na nuvem do Claude Code e do Codex sem configuração. A edição aqui é simples: corta as pausas longas da fala. O método completo entra depois do teste.
+Plugin que transforma a sua IA (Claude ou Codex) numa editora de vídeos. Você grava no celular, coloca os vídeos numa pasta do Google Drive e pede "edita o vídeo". A IA tira pausas, erros e frases repetidas palavra por palavra, escolhe a melhor tomada de cada frase, coloca imagens de apoio por cima da sua fala e devolve o vídeo pronto na pasta "Concluídos".
 
-## O que o teste responde
-1. A instalação roda sozinha?
-2. A transcrição gratuita (Whisper) funciona na nuvem, e em quanto tempo?
-3. A ElevenLabs funciona com a chave?
-4. O vídeo pronto sai por link de download?
+Tudo roda no seu computador. O vídeo não sobe para nenhum site, e a transcrição é grátis.
 
-## Teste no Claude Code (claude.ai/code)
-1. Escolha este repositório e use o ambiente padrão, sem mudar nada.
-2. Mande: `Roda python3 checar.py e me mostra o resultado.`
-3. Mande: `Edita esse vídeo: <link de um Reels curto no Drive, compartilhado como "qualquer pessoa com o link">`
-4. Anote o que o Claude devolveu: tempos, link ou "SEM LINK".
-5. Opcional (ElevenLabs): no ambiente, em **Network secrets**, adicione `api.elevenlabs.io` com o header `xi-api-key` e a chave. Abra uma sessão nova e mande: `Configurei a ElevenLabs. Edita esse vídeo: <link>`
+## Do que você precisa
+- Um computador Windows ou Mac (com pelo menos 10 GB livres).
+- **Claude** (plano Pro ou acima) **ou** **ChatGPT/Codex** (plano Plus ou acima).
+- **Google Drive para computador** (grátis): é o que faz a pasta do Drive aparecer no computador. Baixe em google.com/drive/download.
 
-## Teste no Codex (chatgpt.com/codex)
-1. Crie um ambiente com este repositório.
-2. No campo de **setup script**, cole: `bash instalar.sh`
-3. Rode as mesmas mensagens dos passos 2 e 3 acima.
-4. Se o download falhar, ative o acesso à internet do agente nas configurações do ambiente e repita.
+## Instalação no Claude (uma vez, uns 10 minutos)
+1. Baixe e instale o app do Claude em claude.ai/download e entre na sua conta.
+2. Abra a aba **Code**, escolha qualquer pasta do computador (pode ser a Área de Trabalho) e cole esta linha no chat:
+   ```
+   /plugin install editor-de-videos --marketplace atacadoexponencial-maker/edicao-videos-mentorados
+   ```
+3. Feche e abra a conversa de novo e escreva: **"Instala o editor de vídeos."** A IA instala o que falta e cria a pasta **Edição de Vídeos IA** no seu Google Drive. Se ela pedir permissão para rodar comandos, clique em permitir.
 
-## Arquivos
-- `instalar.sh`: instala ffmpeg, Whisper e o resto. No Claude Code roda sozinho quando a sessão abre.
-- `checar.py`: mostra o que está instalado e quais sites a sessão consegue acessar.
-- `editar.py`: baixa, transcreve, corta as pausas, gera o vídeo e tenta criar o link.
-- `CLAUDE.md` / `AGENTS.md`: instruções para o Claude Code e o Codex (mesmo conteúdo).
+## Instalação no Codex (uma vez, uns 10 minutos)
+1. Instale o app do Codex (chatgpt.com/codex) e entre com a sua conta do ChatGPT.
+2. Abra **Plugins**, adicione a loja `atacadoexponencial-maker/edicao-videos-mentorados` e instale **editor-de-videos**.
+   Pelo terminal, o mesmo é:
+   ```
+   codex plugin marketplace add atacadoexponencial-maker/edicao-videos-mentorados
+   codex plugin add editor-de-videos@edicao-videos-mentorados
+   ```
+3. Abra uma conversa nova e escreva: **"Instala o editor de vídeos."**
+
+## Como usar no dia a dia
+1. No Google Drive (pode ser pelo celular), abra **Edição de Vídeos IA → 1. Para editar** e crie uma pasta com o nome do vídeo (ex.: "Lousa vendas").
+2. Coloque os vídeos dentro. Nomes que ajudam a IA (não são obrigatórios):
+   - `HOOK A`, `HOOK B`: começos diferentes (sai um vídeo pronto para cada um)
+   - `CONTEUDO`: o meio
+   - `CTA`: a chamada do final
+   - `TAKE palestra`, `TAKE loja`: imagens de apoio, para entrar por cima da sua fala
+3. No Claude ou no Codex, escreva: **"Edita o vídeo Lousa vendas."**
+4. A IA faz 3 perguntas rápidas (como foi gravado, se tem takes de apoio, se quer legenda). Responda com o número da opção ou "você decide".
+5. Assista o resultado. Se estiver bom, diga **"Aprovado"** e ele aparece em **2. Concluídos**. Se não, diga o que mudar com o tempo do vídeo: "0:12 começar meio segundo antes; 0:31 cortar a frase repetida".
+
+## Pedidos que funcionam
+- `O que tem para editar?`
+- `Edita o vídeo <nome da pasta>.`
+- `Faz a versão com legenda do <nome>.`
+- `Ajustes no <nome>: 0:12 ...; 0:31 ...`
+- `Aprovado.`
+- `Confere se está tudo instalado.`
+
+## Para quem mantém o plugin
+- O plugin fica em `plugins/editor-de-videos/` e a skill em `skills/editar-video/` (SKILL.md + scripts Python).
+- `.claude-plugin/marketplace.json` é a loja do Claude; `.agents/plugins/marketplace.json` é a do Codex. As duas apontam para a mesma pasta.
+- Transcrição: Whisper no computador (grátis). Se existir a variável `ELEVENLABS` (ou a linha `ELEVENLABS=...` em `~/EditorDeVideosIA/.env`), usa a ElevenLabs. `WHISPER_MODELO=medium` deixa o Whisper mais preciso e mais lento.
+- Arquivos de trabalho ficam em `~/EditorDeVideosIA/projetos/`, fora do Drive.

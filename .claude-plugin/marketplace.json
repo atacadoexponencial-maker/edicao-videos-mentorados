@@ -1,0 +1,14 @@
+{
+  "name": "edicao-videos-mentorados",
+  "description": "Editor de vídeos com IA para os mentorados",
+  "owner": {
+    "name": "Atacado Exponencial"
+  },
+  "plugins": [
+    {
+      "name": "editor-de-videos",
+      "source": "./plugins/editor-de-videos",
+      "description": "Edita vídeos falados: corta pausas, erros e repetições palavra por palavra, escolhe a melhor tomada e coloca takes de apoio com a voz de fundo."
+    }
+  ]
+}
