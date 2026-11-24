@@ -36,6 +36,13 @@ $PY $S/limpar.py <projeto>                          # depois de entregar: apaga 
 
 Transcrever e montar levam alguns minutos: rode em segundo plano e avise ("estou transcrevendo, leva uns 3 minutos").
 
+## Antes de tudo: onde você está rodando
+A edição precisa rodar **no computador da pessoa** (os vídeos, o Python e o ffmpeg ficam lá). Isso acontece no app do Claude para computador, na aba **Code**, ou no app do Codex.
+Se você está no chat do site (claude.ai no navegador ou no celular) ou em qualquer lugar sem acesso aos arquivos e comandos do computador dela, não tente editar nem peça caminhos de pasta. Diga só isto, em poucas linhas:
+1. Abra o app do Claude no computador (baixe em claude.ai/download se ainda não tiver).
+2. Clique na aba **Code** e escolha uma pasta qualquer (pode ser a Área de Trabalho).
+3. Escreva lá: "Instala o editor de vídeos" (primeira vez) ou "Edita o vídeo <nome>".
+
 ## Primeira vez (instalação)
 1. `checar_ambiente.py`. Se faltar algo, `instalar.py` e espere terminar. Se o Python não existir: no Windows rode você mesmo `winget install -e --id Python.Python.3.12 --accept-source-agreements --accept-package-agreements` e use `py` em seguida; no Mac rode `xcode-select --install` (abre uma janela: peça para a pessoa clicar em "Instalar" e avisar quando terminar). Se não der, peça para instalar pelo site python.org (Windows: marcar "Add python.exe to PATH") e voltar.
 2. `pasta.py`. Diga onde a pasta ficou e se está no Google Drive. Se não estiver, sugira instalar o **Google Drive para computador** (assim a pasta aparece no celular e os vídeos sobem do celular), ou pergunte se a pessoa quer usar outra pasta (`--definir`).

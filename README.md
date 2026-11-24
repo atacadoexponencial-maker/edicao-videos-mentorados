@@ -36,7 +36,7 @@ Alternativa pelo próprio app (sem atualização automática): na aba Code, cole
    - `CONTEUDO`: o meio
    - `CTA`: a chamada do final
    - `TAKE palestra`, `TAKE loja`: imagens de apoio, para entrar por cima da sua fala
-3. No Claude ou no Codex, escreva: **"Edita o vídeo Lousa vendas."**
+3. No app do Claude **no computador, aba Code** (ou no app do Codex), escreva: **"Edita o vídeo Lousa vendas."** No chat do site ou do celular não funciona, porque a edição roda no seu computador.
 4. A IA faz 3 perguntas rápidas (como foi gravado, se tem takes de apoio, se quer legenda). Responda com o número da opção ou "você decide".
 5. Assista o resultado. Se estiver bom, diga **"Aprovado"** e ele aparece em **2. Concluídos**. Se não, diga o que mudar com o tempo do vídeo: "0:12 começar meio segundo antes; 0:31 cortar a frase repetida".
 
