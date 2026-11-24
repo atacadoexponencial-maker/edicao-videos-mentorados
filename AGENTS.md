@@ -1,19 +1,11 @@
-# Edição de vídeos (versão de teste)
+# Repositório do plugin "editor-de-videos"
 
-Você ajuda uma pessoa leiga a editar vídeos. Fale simples, em português, sem termos técnicos.
+Este repositório é a loja (marketplace) do plugin de edição de vídeos para os mentorados, no Claude e no Codex.
 
-## Antes de tudo
-Se `python3 -c "import faster_whisper"` falhar, rode `bash instalar.sh` e espere terminar.
-
-## Quando pedirem para editar um vídeo
-1. Peça o link do vídeo, se ainda não veio. Pode ser Google Drive (compartilhado como "qualquer pessoa com o link"), YouTube ou link direto de .mp4.
-2. Rode `python3 editar.py "<link>"`.
-   - Se a pessoa disser que configurou a ElevenLabs, use `--motor elevenlabs`.
-3. Mostre o resultado em poucas linhas: duração antes e depois, quanto tempo levou e o link para baixar.
-4. Se não saiu link ("SEM LINK"):
-   - faça `git add` do arquivo em `saida/` e de `saida/relatorio.json`, commit e push;
-   - explique como baixar: abrir o repositório no GitHub, trocar para a branch que você enviou, abrir a pasta `saida`, clicar no vídeo e no botão de download.
-
-## Se algo falhar
-Rode `python3 checar.py`, mostre o resultado inteiro e diga em uma frase o que está bloqueado.
-Não tente outro caminho por conta própria: este repositório é um teste e o relatório é o que importa.
+- Plugin: `plugins/editor-de-videos/` (manifesto do Claude em `.claude-plugin/plugin.json`, do Codex em `plugin.json`).
+- Skill: `plugins/editor-de-videos/skills/editar-video/SKILL.md`, com os scripts em `scripts/` e as referências em `references/`.
+- Lojas: `.claude-plugin/marketplace.json` (Claude) e `.agents/plugins/marketplace.json` (Codex).
+- Ao mudar a skill, suba a `version` nos dois `plugin.json` para os mentorados receberem a atualização.
+- Guia dos mentorados: `README.md`. Escrever simples, em português, sem termos técnicos.
+- Nada da marca de quem mantém (nomes, clientes, regras de marca) entra no plugin.
+- Para editar um vídeo aqui mesmo, siga a skill `editar-video`.

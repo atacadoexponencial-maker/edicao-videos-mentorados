@@ -1,5 +1,0 @@
-requests
-imageio-ffmpeg
-faster-whisper
-yt-dlp
-gdown
